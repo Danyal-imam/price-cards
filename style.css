@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:Cambria, Cochin, Georgia, Times,  serif;
+    background-color: hsl(240, 78%, 98%);
+    position: relative;
+    height: 100vh;
+}
+
+body::before {
+    content:'';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-top.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: -1;
+
+}
+
+body::after {
+    content:'';
+    position: absolute;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: -1;
+
+}
+
+.container {
+    max-width: 1000px;
+    text-align: center;
+    margin: 70px auto;
+    padding: 35px 0 35px;
+    
+}
+
+.box-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 40px;
+    margin: 0 auto ;
+    margin-bottom: 40px;
+  
+       
+}
+
+.box {
+    flex: 1;
+    padding: 25px;
+    border-radius: 10px;
+    padding-top: 10px;
+    margin-bottom: 25px;
+    margin: 0;
+    
+    
+}
+
+.box h1 {
+    font-family: inherit;
+    font-size: 45px;
+    font-weight: 800;
+    margin-top: -10px;
+    
+}
+
+.box span {
+    font-size: 25px;
+    
+}
+
+
+.box p {
+    
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.top {
+    border-top:1px solid #ddd; 
+    padding-top: 10px;
+}
+
+.box button { 
+    width:100%;
+    padding:10px 0;
+    border-radius: 5px;
+    border: none;
+    background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%));
+    text-transform: uppercase;
+    font-family:Cambria, Cochin, Georgia, Times,  serif;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.box-same {
+    background-color: white;
+    
+
+}
+.box-same button {
+   
+    color:hsl(240, 78%, 98%)
+    
+}
+.box-middle {
+    background-image: linear-gradient(
+        to right,
+        hsl(236, 72%, 79%),
+        hsl(237, 63%, 64%));
+        color: hsl(240, 78%, 98%);
+        transform: scale(1.1);
+
+}
+
+.box-middle button {
+    background-image: none;
+    background-color: #fff;
+    color: hsl(237, 63%, 64%);
+}
+
+.box-middle > * {
+    transform: scale(0.9);
+}
+@media screen and (max-width:555px){
+    .box-container{
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+    .box {
+        
+        margin-bottom:40px;
+        width: 250px;
+
+    }
+    .box-middle {
+        transform: scale(1);
+    }
+    .box-middle *{
+        transform: scale(1);
+    }
+}
+
+
